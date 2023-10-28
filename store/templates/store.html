@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+img{
+    background-size: cover;
+    object-fit: cover;
+}
+.thumbnail{
+    height: 300px;
+}
+.col-lg-4{
+    margin-bottom: 10px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+</style>
+
+    <div class="row">
+        {% for i in  product %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{ i.product_image.url }}">
+			<div class="box-element product">
+                <div class="title">
+				    <h6><strong>{{ i.name }}</strong></h6>
+                    <h6>$<s>{{ i.old_price }}</s></h6>
+                </div>
+				<hr>
+
+				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
+				<a class="btn btn-outline-success" href="#">View</a>
+				<h4 style="display: inline-block; float: right"><strong>${{ i.new_price }}</strong></h4>
+
+			</div>
+		</div>
+        {% endfor %}
+
+
+	</div>
+
+
+{% endblock content %}
