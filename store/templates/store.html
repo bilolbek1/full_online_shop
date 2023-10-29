@@ -26,13 +26,13 @@ img{
 			<div class="box-element product">
                 <div class="title">
 				    <h6><strong>{{ i.name }}</strong></h6>
-                    <h6>$<s>{{ i.old_price }}</s></h6>
+                    <h6>$<s>{{ i.old_price|floatformat:2 }}</s></h6>
                 </div>
 				<hr>
 
 				<button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
 				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>${{ i.new_price }}</strong></h4>
+				<h4 style="display: inline-block; float: right"><strong>${{ i.new_price|floatformat:2 }}</strong></h4>
 
 			</div>
 		</div>
